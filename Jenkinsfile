@@ -7,7 +7,7 @@ environment{
     stages {
         stage('CLONE') {
             steps {
-                git branch: 'main', credentialsId: 'Github-Login', url: 'https://github.com/tejaswini9949/devops.git'
+              git credentialsId: 'Git', url: 'https://github.com/tejaswini9949/devops.git'  
 
             }
         }
