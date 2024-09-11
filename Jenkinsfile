@@ -22,11 +22,7 @@ pipeline{
             }
             post{
 
-                success{
-
-                    echo "Archiving the Artifacts"
-                    archiveArtifacts artifacts: '**/target/*.jar'
-                }
+                
             }
         }
         stage('Deploy to tomcat server'){
