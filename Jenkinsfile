@@ -20,13 +20,11 @@ pipeline {
 
 stage('DEPLOY') {
             steps {
-                sshagent(['tom']) {
+                
 
-               sh "scp -o StrictHostKeyChecking=no target/vansro-1.0-SNAPSHOT.jar ec2-user@15.207.110.255:/opt/tomcat/webapps"
+        deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://15.207.110.255:8080/')], contextPath: 'javaapp', war: '**/*.war'            
 
-                    
-
-     }
+     
    }
  }
 
